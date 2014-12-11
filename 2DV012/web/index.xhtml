@@ -8,8 +8,9 @@
 <body>
 <h:form>
 What is your name?
-<h:inputText id="theName" value="#{user.name}" />
-<h:commandButton value="Send name" action="welcome"/>
+<h:inputText id="theName" value="#{userManagedBean.username}" />
+<h:inputText id="thePassword" value="#{userManagedBean.password}" />
+<h:commandButton value="Add" action="#{userManagedBean.addUser()}" class="submitButton" />
 
 </h:form>
 </body>
