@@ -1,12 +1,17 @@
 package managedBeans;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
+import javax.ejb.EJB;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+
+import queryBeans.WindowQueryBean;
+import model.Window;
 
 /**
  * Session Bean implementation class windowManagedBean
@@ -21,12 +26,33 @@ public class WindowManagedBean implements Serializable{
 	private int id;
 	private String url;
 	private Date date;
+	private Window window;
+	private Calendar calendar;
+	
+	@EJB
+	private WindowQueryBean qb;
+	
     /**
      * Default constructor. 
      */
     public WindowManagedBean() {
         // TODO Auto-generated constructor stub
     }
+    
+    public void addContent(){
+    	calendar = Calendar.getInstance();
+    	calendar.set(2014, 12, 12);
+    	date = calendar.getTime();
+    	id=1;
+    	url = "https://secure.static.tumblr.com/901e373451ce628a12e33ce06ad4ab48/p8xbaqx/FkTms9ox7/tumblr_static_decorated-christmas-tree.jpg";
+    	
+    	window = new Window();
+    	window.setDate(date);
+    	window.setId(id);
+    	window.setUrl(url);
+    	qb.addWindow(window);
+    }
+    
     
     public int getId() {
 		return id;
