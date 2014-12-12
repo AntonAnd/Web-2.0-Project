@@ -9,9 +9,9 @@
 <body> 
 <h:form>
 <p:panel id="panel" header="LoginPage">
-	<h:panelGrid columns="2" cellpadding="5">
+	<h:panelGrid columns="3" cellpadding="5">
 		<p:outputLabel for="username" value="Username" />
-            <p:inputText id="username" value="#{userManagedBean.username}" required="true" label="Username">
+            <p:inputText id="username" value="#{userManagedBean.username}"  label="Username">
                 <f:validateLength minimum="2" />
             </p:inputText>
             <p:message for="username" display="icon" />
