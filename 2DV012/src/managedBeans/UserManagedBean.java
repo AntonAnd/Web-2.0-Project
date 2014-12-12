@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
 import queryBeans.UserQueryBean;
@@ -46,5 +48,31 @@ public class UserManagedBean implements Serializable{
 		user.setPassword(password);
 		
 		qb.addUser(user);
+	}
+	
+	public String login(){
+		for(int i=0; i<qb.getListOfUsers().size(); i++){
+			if(qb.getListOfUsers().get(i).getUsername().equals(this.getUsername()) && 
+					qb.getListOfUsers().get(i).getPassword().equals(this.getPassword())){
+				return "/index.xhtml?faces-redirect=true";
+			}
+		}
+		setErrorMsgs("Wrong username or password, please try again.");
+		return "";
+	}
+	
+	private void setErrorMsgs(String s) {
+		FacesMessage facesMessage = new FacesMessage(FacesMessage.SEVERITY_ERROR, s, null);
+		FacesContext.getCurrentInstance().addMessage("", facesMessage);
+	}
+	
+	public boolean loginCheck(){
+		for(int i=0; i<qb.getListOfUsers().size(); i++){
+			if(qb.getListOfUsers().get(i).getUsername().equals(this.getUsername()) && 
+					qb.getListOfUsers().get(i).getPassword().equals(this.getPassword())){
+				return true;
+			}
+		}
+		return false;
 	}
 }

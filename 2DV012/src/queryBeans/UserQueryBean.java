@@ -1,9 +1,13 @@
 package queryBeans;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 
 import model.User;
 
@@ -29,5 +33,12 @@ public class UserQueryBean {
     public void addUser(User u){
     	em.persist(u);
     }
+    
+    public List<User> getListOfUsers() {
+		TypedQuery<User> theQuery = em.createQuery("SELECT u FROM User u",
+				User.class);
+		List<User> result = theQuery.getResultList();
+		return result;
+	}
 
 }

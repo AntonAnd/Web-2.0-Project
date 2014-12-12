@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<h:form>
+<p:panel id="panel" header="LoginPage">
+	<h:panelGrid columns="2" cellpadding="5">
+		<p:outputLabel for="username" value="Username" />
+            <p:inputText id="username" value="#{userManagedBean.username}" required="true" label="Username">
+                <f:validateLength minimum="2" />
+            </p:inputText>
+            <p:message for="username" display="icon" />
+            
+		<h:outputText value="Password " />
+        <p:password id="password" value="#{userManagedBean.password}" feedback="true" />
+	</h:panelGrid>
+	<p:commandButton value="Login" update="panel" action="#{userManagedBean.login()}" icon="ui-icon-check" />
+	<p:messages infoStyle="color:green" errorStyle="color:red" />
+	</p:panel>
+</h:form>
+
+</body> 
+</html>
