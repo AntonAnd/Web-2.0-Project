@@ -13,6 +13,8 @@ import java.util.Date;
 @NamedQuery(name="Window.findAll", query="SELECT w FROM Window w")
 public class Window implements Serializable {
 	private static final long serialVersionUID = 1L;
+	
+	
 
 	@Id
 	private int id;
