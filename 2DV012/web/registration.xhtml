@@ -25,9 +25,8 @@
         <p:password id="pwd2" value="#{userManagedBean.password}" label="second password" required="true" />
     </h:panelGrid>
  
-    <p:commandButton update="matchGrid" action="#{userManagedBean.addUser()}" value="Register">
-    <f:actionListener binding="#{userManagedBean.login()}" />
-    </p:commandButton>
+    <p:commandButton update="matchGrid" value="Register" action="#{userManagedBean.login()}" actionListener="#{userManagedBean.addUser()}"/>
+	
 </p:panel>
 </h:form>
 </body>
