@@ -29,6 +29,8 @@ public class WindowManagedBean implements Serializable{
 	
 	private Date date;
 	
+	
+	
 	private Window window;
 	private Calendar calendar;
 	
