@@ -7,9 +7,12 @@
 
 <h:head></h:head> 
 <body> 
-	<p:inputText id="url" value="#{windowManagedBean.url}" />
-	<p:commandButton value="Add" action="{winowManagedBean.addContent()"></p:commandButton>
+	<h:form>
+		<p:inputText id="url" value="#{windowManagedBean.url}" />
+		<p:commandButton value="Add" action="#{windowManagedBean.addContent()}" class="submitButton" />
+		<a href="#{windowManagedBean.url}" >Link</a>
+	</h:form>
 	
-	<img src="#{windowManagedBean.url}" alt="some_text" />
+	
 </body> 
 </html>

@@ -26,6 +26,7 @@ public class WindowManagedBean implements Serializable{
 	private int id;
 	private String url;
 	private Date date;
+	
 	private Window window;
 	private Calendar calendar;
 	
@@ -43,8 +44,6 @@ public class WindowManagedBean implements Serializable{
     	calendar = Calendar.getInstance();
     	calendar.set(2014, 12, 12);
     	date = calendar.getTime();
-    	id=1;
-    	url = "https://secure.static.tumblr.com/901e373451ce628a12e33ce06ad4ab48/p8xbaqx/FkTms9ox7/tumblr_static_decorated-christmas-tree.jpg";
     	
     	window = new Window();
     	window.setDate(date);
