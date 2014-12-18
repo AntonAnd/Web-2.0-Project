@@ -25,6 +25,8 @@ public class WindowManagedBean implements Serializable{
 	
 	private int id;
 	private String url;
+	
+	
 	private Date date;
 	
 	private Window window;
