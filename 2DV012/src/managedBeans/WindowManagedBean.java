@@ -23,7 +23,7 @@ public class WindowManagedBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private int id;
+	private int w_id;
 	private String url;
 	
 	
@@ -51,17 +51,17 @@ public class WindowManagedBean implements Serializable{
     	
     	window = new Window();
     	window.setDate(date);
-    	window.setId(id);
+    	window.setWId(w_id);
     	window.setUrl(url);
     	qb.addWindow(window);
     }
     
     
     public int getId() {
-		return id;
+		return w_id;
 	}
 	public void setId(int id) {
-		this.id = id;
+		this.w_id = id;
 	}
 	public String getUrl() {
 		return url;

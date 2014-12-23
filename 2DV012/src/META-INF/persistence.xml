@@ -3,5 +3,6 @@
 	<persistence-unit name="2DV012">
 		<class>model.User</class>
 		<class>model.Window</class>
+		<class>model.Calendar</class>
 	</persistence-unit>
 </persistence>

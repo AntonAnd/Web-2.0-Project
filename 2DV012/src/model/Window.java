@@ -13,11 +13,13 @@ import java.util.Date;
 @NamedQuery(name="Window.findAll", query="SELECT w FROM Window w")
 public class Window implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	
 
 	@Id
-	private int id;
+	@Column(name="w_id")
+	private int wId;
+
+	@Column(name="calendar_id")
+	private int calendarId;
 
 	@Temporal(TemporalType.DATE)
 	private Date date;
@@ -27,12 +29,20 @@ public class Window implements Serializable {
 	public Window() {
 	}
 
-	public int getId() {
-		return this.id;
+	public int getWId() {
+		return this.wId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setWId(int wId) {
+		this.wId = wId;
+	}
+
+	public int getCalendarId() {
+		return this.calendarId;
+	}
+
+	public void setCalendarId(int calendarId) {
+		this.calendarId = calendarId;
 	}
 
 	public Date getDate() {
